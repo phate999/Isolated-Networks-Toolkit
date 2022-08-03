@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    <title>Isolated Networks Toolkit</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/epoch/0.8.4/css/epoch.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="all_css.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body id="ext-element-1"
+      class="epoch-theme-defaults x-body x-webkit x-chrome x-mac x-border-layout-ct x-border-box x-container x-container-default"
+      componentid="app-main-1010">
+
+<div class="x-container north-side x-border-item x-box-item x-container-default x-box-layout-ct"
+     style="border-width: 0px; width: 1118px; height: 116px; margin: 0px; right: auto; left: 0px; top: 0px;"
+     id="AdminHeader-1012">
+    <div id="AdminHeader-1012-innerCt" data-ref="innerCt" role="presentation" class="x-box-inner"
+         style="width: 1118px; height: 121px;">
+        <div id="AdminHeader-1012-targetEl" data-ref="targetEl" class="x-box-target" role="presentation"
+             style="width: 1118px;">
+            <div class="x-container x-box-item x-container-default x-box-layout-ct"
+                 style="width: 455px; right: auto; left: 0px; top: 0px; margin: 0px;" id="container-1013">
+                <div id="container-1013-innerCt" data-ref="innerCt" role="presentation" class="x-box-inner"
+                     style="width: 455px; height: 121px;">
+                    <div id="container-1013-targetEl" data-ref="targetEl" class="x-box-target" role="presentation">
+                        <img class="x-img x-box-item x-img-default"
+                                                    style="margin: 0px; right: auto; left: 40px; top: 40px;"
+                                                    id="image-1014"
+                                                    src="cp_logo.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="x-panel x-border-item x-box-item x-panel-center-side" id="panel-1033" style="top:100px; left:40px">
+    <div id="main page">
+
+        <div id="routers">
+            <p><h1><br>Isolated Networks Toolkit</h1></p>
+            <p><h2><br>Load Routers:</h2></p>
+            Load a .csv file of routers with 3 columns: ip address, username, password.  Header line is optional.<br>
+            Default port is 8080.  If using a different port, specify it in your IP address. (example: 10.0.0.47:80)<br>
+
+            <form enctype="multipart/form-data" id="routers form" method="post" name="routers">
+                <p>
+                    <input type="file" id="routers file" name="routers file" accept=".csv"><br><br>
+                    <button id="routers upload">Upload</button>
+                </p>
+            </form>
+        </div>
+
+        <ul id="routers_list" style=""></ul>
+
+        <div id="routers action" style="display:none;">
+            <p><h2><br>Select Action:</h2></p>
+            <p>
+                <button id="license button" name="license" onclick="headerSelect(this.name)" value="license">Upload Licenses</button>&nbsp;
+                <button id="ncos button" name="ncos" onclick="headerSelect(this.name)" value="ncos">Upgrade NCOS</button>&nbsp;&nbsp;
+                <button id="config button" name="config" onclick="headerSelect(this.name)" value="config">Push Configuration</button>&nbsp;&nbsp;
+            </p>
+        </div>
+
+        <div id="license" style="display:none;">
+            <p style="text-align: center;"><h2><br>Upload License File (.lic)</h2></p>
+            <form enctype="multipart/form-data" id="license form" method="post" name="license">
+                <p>
+                    <input type="file" id="license file" name="license file" accept=".lic"><br><br>
+                    <button id="license upload">Upload</button>
+                </p>
+            </form>
+            <div id="license action" style="display:none;">
+                <br>
+                <h2>Upload License File to Routers</h2>
+                <button onclick="trigger('license')">GO!</button>
+            </div>
+        </div>
+
+        <div id="ncos" style="display:none;">
+            <p style="text-align: center;"><h2><br>Upload NCOS File (.bin)</h2></p>
+            <form enctype="multipart/form-data" id="ncos form" method="post" name="ncos">
+                <p>
+                    <input type="file" id="ncos_file" name="ncos file" accept=".bin"><br><br>
+                    <button>Upload</button>
+                </p>
+            </form>
+            <div id="ncos action" style="display:none;">
+                <br>
+                <h2>Upgrade NCOS on Routers</h2>
+                <button onclick="trigger('ncos')">GO!</button>
+            </div>
+        </div>
+
+        <div id="config" style="display:none;">
+            <p style="text-align: center;"><h2><br>Upload Configuration File (.bin)</h2></p>
+            <form enctype="multipart/form-data" id="config form" method="post" name="config">
+                <p>
+                    <input type="file" id="config file" name="config file" accept=".bin"><br><br>
+                    <button id="config upload">Upload</button>
+                </p>
+            </form>
+            <div id="config action" style="display:none;">
+                <br>
+                <h2>Push Configuration File to Routers</h2>
+                <button onclick="trigger('config')">GO!</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
