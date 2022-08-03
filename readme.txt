@@ -1,5 +1,5 @@
 The Cradlepoint Isolated Networks Toolkit is designed to provide a web interface
-for pushing license files and NCOS (firmware) files to Cradlepoint routers.
+for pushing license files, NCOS (firmware) files, and configuration files to Cradlepoint routers.
 
 It runs a web interface on http://localhost:9000
 
@@ -10,12 +10,9 @@ Example: 10.0.0.47:80
 
 You will need a license file to license routers.  Contact servicessupport@cradlepoint.com for assistance.
 
-You will need to download the NCOS file to upgrade your NCOS (firmware).  
-To download NCOS, use the included "get_fw.py" script - enter your API keys at the top and run it.
+To download NCOS, use the included "Download NCOS.py" script - enter your API keys at the top and run it.
 
 Uploaded License Files are saved in the licenses/ folder
 Uploaded NCOS Files are saved in the NCOS/ folder
+Uploaded configs are saved in the configs/ folder.
 Logs are saved in the logs/ folder.
-
-aterrell@cradlepoint.com
-
